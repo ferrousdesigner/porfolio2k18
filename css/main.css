@@ -34,8 +34,8 @@
 }
 .navigation > div > div{
   width: 20px;
-  height: 2px;
-  background: white;
+  height: 3px;
+  background: #ccc;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -56,7 +56,7 @@
   color: #111;
   padding-top: 5vh;
   transform: translateX(200px);
-  transition: all 0.4s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .github-link{
@@ -177,10 +177,10 @@
 body{
   height: 100vh;
   background: #111;
-  overflow-x: hidden;
+  overflow: hidden;
   width: 100vw;
   font-family: 'Raleway', sans-serif;
-  color: #eee;
+  color: #ccc;
   position: relative;
   line-height: 2rem;
   z-index: 0;
@@ -189,9 +189,21 @@ body{
 
 
 
-.panel-hd{
+.vertical-panel{
   width: 100%;
-  height: 100%;
+  position: relative;
+  background: transparent;
+  z-index: 7;
+  top: 0;
+  transform: translateY(0);
+  overflow: hidden;
+  will-change: scroll-position, transform;
+  transition: all 0.5s ease-in-out;
+  -webkit-transform: translate3d(0,0,1px);
+}
+.panel-hd{
+  width: 100vw;
+  height: 100vh;
   position: relative;
   background: transparent;
   z-index: 7;
@@ -281,8 +293,8 @@ body{
 
 .panel-white {
   background: #fff;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -293,13 +305,58 @@ body{
 
 .work-white{
   background: #fff;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   z-index: 1;
+  color: #111;
+  overflow-x: visible;
+}
+.arrow-left {
+  font-size: 3rem;
+  color: #ddd;
+  height:100%;
+  right: 0;
+  top:-1.6rem;
+  width: 10vw;
+  z-index: 1;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.arrow-right > img{
+  transform: rotateZ(90deg);
+    width: 80px;
+  filter: drop-shadow(0 0 1px black);
+  cursor: pointer;
+}
+.arrow-right {
+  font-size: 3rem;
+  color: #ddd;
+  height:100%;
+  left: 0;
+  top:-1.6rem;
+  width: 10vw;
+  z-index: 1;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    cursor: pointer;
+}
+.arrow-left > img{
+  width: 80px;
+  transform: rotateZ(-90deg);
+  filter: drop-shadow(0 0 1px black);
+    cursor: pointer;
+}
+.hide-arrow{
+  opacity: 0;
+  pointer-events: none;
 }
 
 .work-panel-white{
@@ -309,12 +366,15 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  left: 0;
-  top: 0;
+  left: 0vw;
+  top: 0vw;
   height: 100vh;
   width: 100vw;
-  overflow-x: scroll;
+  overflow-x: visible;
   z-index: 1;
+  will-change: transform;
+    -webkit-transform: translate3d(0,0,1px);
+  transition: all 0.5s ease-in-out;
 }
 .work-panel-white > div{
   position: absolute;
@@ -330,9 +390,9 @@ body{
 .page-indicator{
   position: absolute;
   height: 40px !important;
-  width: 100px !important;
+  width: 180px !important;
   bottom: 10px !important;
-  left: calc(50% - 50px) !important;
+  left: calc(50% - 90px) !important;
   color: #111;
   display: flex;
   justify-content: space-around;
@@ -340,29 +400,23 @@ body{
   z-index: 1;
 }
 .page-indicator > div{
-  height: 10px;
-  width: 10px;
+  height: 15px;
+  width: 15px;
   border: 1px solid currentColor;
   border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 .page-indicator > div.active{
+  background: currentColor;
+}
+.page-indicator > div:hover{
   background: currentColor;
 }
 .work-panel-white  > div:nth-child(1) {
   left: 0;
 }
-.work-panel-white  > div:nth-child(1)::after {
-  content: ' \27A4';
-  font-size: 3rem;
-  color: currentColor;
-  height: 100%;
-  right: 0;
-  width: 10vw;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .work-panel-white  > div:nth-child(2) {
   left: 100vw;
 }
@@ -371,6 +425,18 @@ body{
 }
 .work-panel-white  > div:nth-child(4) {
   left: 300vw;
+}
+.work-panel-white  > div:nth-child(5) {
+  left: 400vw;
+}
+.work-panel-white  > div:nth-child(6) {
+  left: 500vw;
+}
+.work-panel-white  > div:nth-child(7) {
+  left: 600vw;
+}
+.work-panel-white  > div:nth-child(8) {
+  left: 700vw;
 }
 
 .panel-white > div {
@@ -405,8 +471,8 @@ body{
 
 .panel-black {
   background: rgba(0,0,0,0.6);
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -424,6 +490,7 @@ body{
   width: 110%;
   height: 110%;
   position: absolute;
+  will-change: transform;
   left: -5%;
   top: -5%;
   content: '';
@@ -519,6 +586,7 @@ body{
   font-size: 1.4rem;
   text-align: center;
   margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 .links{
  font-size: 1.5rem;
@@ -564,6 +632,69 @@ body{
 
 
 
-@media (max-width: 1040px) {
+@media (max-width: 640px) {
+  .name{
+    font-size: 2rem;
+    letter-spacing: 0.7rem;
+    line-height: 20px;
+  }
+  .black-heading, .white-heading{
+    font-size: 2rem;
+    letter-spacing: 0.7rem;
+    line-height: 36px;
+  }
 
+  .profession{
+    font-size: 16px;
+  }
+
+  .panel-white{
+    padding: 0 5%;
+      border-radius: 10px;
+  }
+  .panel-white > div > div.avatar{
+    height: 170px;
+    width: 170px;
+    padding: 0px;
+  }
+  .panel-white > div > div.avatar > div{
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+  }
+  .tagline{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .about,.music-bio{
+    font-size: 16px;
+    text-align: center;
+    line-height: 26px;
+    margin-bottom: 1rem;
+  }
+
+  .panel-black{
+    padding: 0 5%;
+      border-radius: 10px;
+  }
+  .quote{
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .links-underlined{
+    font-size: 1rem;
+  }
+  .underlined{
+    font-size: 1rem;
+  }
+  .panel-hd{
+      border-radius: 10px;
+  }
+  .work-white{
+      border-radius: 10px;
+  }
+  .work-panel-white{
+      border-radius: 10px;
+  }
 }
