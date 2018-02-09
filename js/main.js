@@ -73,9 +73,9 @@ document.querySelector('body').onkeydown =  function(e){
 
 function slideDown () {
   // console.log('Up')
-  if(MOVING_V && current_top < (5 * document.documentElement.clientHeight) ) {
+  if(MOVING_V && current_top < (5 * window.screen.availHeight) ) {
   MOVING_V = false
-  new_top = (parseInt(current_top) + document.documentElement.clientHeight)
+  new_top = (parseInt(current_top) + window.screen.availHeight)
   panelV.style.transform = 'translateY(-' + new_top + 'px)'
   current_top = new_top
 
@@ -88,7 +88,7 @@ function slideUp () {
   if(MOVING_V && current_top > 0) {
   MOVING_V = false
 
-  new_top = (parseInt(current_top) - document.documentElement.clientHeight)
+  new_top = (parseInt(current_top) - window.screen.availHeight)
   panelV.style.transform = 'translateY(-' + new_top + 'px)'
   current_top = new_top
 
@@ -97,9 +97,9 @@ function slideUp () {
 }
 
 function slideLeft () {
-  if(MOVING_X && current_left > 0 && current_top >= (3 * document.documentElement.clientHeight) && current_top < (4 * document.documentElement.clientHeight)  ) {
+  if(MOVING_X && current_left > 0 && current_top >= (3 * window.screen.availHeight) && current_top < (4 * window.screen.availHeight)  ) {
   MOVING_X = false
-  new_left = (parseInt(current_left) - document.documentElement.clientWidth)
+  new_left = (parseInt(current_left) - window.screen.availWidth)
   panel.style.transform = 'translateX(-' + new_left + 'px)'
   current_left = new_left
   document.getElementsByClassName('active')[0].previousSibling.classList.add('active')
@@ -109,11 +109,11 @@ function slideLeft () {
 }
 
 function slideRight() {
-  console.log(current_top/document.documentElement.clientHeight)
-  if(MOVING_X && current_left < (7 * document.documentElement.clientWidth) && current_top >= (3 * document.documentElement.clientHeight) && current_top < (4 * document.documentElement.clientHeight) ) {
+  console.log(current_top/window.screen.availHeight)
+  if(MOVING_X && current_left < (7 * window.screen.availWidth) && current_top >= (3 * window.screen.availHeight) && current_top < (4 * window.screen.availHeight) ) {
   MOVING_X = false
   console.log('Right')
-  new_left = (parseInt(current_left) + document.documentElement.clientWidth)
+  new_left = (parseInt(current_left) + window.screen.availWidth)
   panel.style.transform = 'translateX(-' + new_left + 'px)'
   current_left = new_left
   document.querySelectorAll('.active')[0].nextSibling.classList.add('active')
