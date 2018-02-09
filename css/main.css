@@ -840,12 +840,12 @@ body{
 @media (max-width: 640px) {
   .name{
     font-size: 2rem;
-    letter-spacing: 0.7rem;
+    letter-spacing: 0.3rem;
     line-height: 20px;
   }
   .black-heading, .white-heading{
     font-size: 2rem;
-    letter-spacing: 0.7rem;
+    letter-spacing: 0.3rem;
     line-height: 36px;
   }
 
@@ -876,11 +876,9 @@ body{
 
   .panel-white{
     padding: 0 5%;
-      border-radius: 20px;
   }
   .panel-black{
     padding: 0 5%;
-      border-radius: 20px;
   }
   .quote{
     font-size: 1.5rem;
@@ -892,14 +890,5 @@ body{
   }
   .underlined{
     font-size: 1rem;
-  }
-  .panel-hd{
-      border-radius: 20px;
-  }
-  .work-white{
-      border-radius: 20px;
-  }
-  .work-panel-white{
-      border-radius: 20px;
   }
 }

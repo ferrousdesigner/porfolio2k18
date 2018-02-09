@@ -44,20 +44,48 @@ swipedetect(el, function(swipedir){
 })
 
 
-document.querySelector('body').addEventListener('mousewheel', function(e){
-  // console.log(document.getElementsByClassName('work-white'))
-  var delta = e.wheelDelta;
-  if(delta > 0){
-      slideUp()
-  }
-  else if(delta < 0){
+var mousewheelevt=(/Firefox/i.test(navigator.userAgent))? "DOMMouseScroll" : "mousewheel" //FF doesn't recognize mousewheel as of FF3.x
 
-      slideDown()
-  }
-  else {
-    console.log('Wait')
-  }
-});
+if (document.attachEvent) //if IE (and Opera depending on user setting)
+    document.querySelector('body').attachEvent("on"+mousewheelevt, function(e){
+      console.log('event',e)
+      scrollDetectFunction(e)
+    })
+else if (document.addEventListener) //WC3 browsers
+    document.querySelector('body').addEventListener(mousewheelevt, function(e){
+      scrollDetectFunction(e)
+    }, false)
+
+    function scrollDetectFunction(e){
+     // console.log(document.getElementsByClassName('work-white'))
+     if((/Firefox/i.test(navigator.userAgent)))
+     {
+       var delta = e.detail;
+       if(delta < 0){
+           slideUp()
+       }
+       else if(delta > 0){
+
+           slideDown()
+       }
+       else {
+         console.log('Wait')
+       }
+     } else {
+       var delta = e.wheelDelta;
+       if(delta > 0){
+           slideUp()
+       }
+       else if(delta < 0){
+
+           slideDown()
+       }
+       else {
+         console.log('Wait')
+       }
+     }
+    }
+
 
 document.querySelector('body').onkeydown =  function(e){
     if (e.key == 'ArrowUp') {
