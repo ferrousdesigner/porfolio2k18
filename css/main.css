@@ -16,9 +16,15 @@
   position: fixed;
   right: 5px;
   top: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   cursor: pointer;
   z-index: 10;
   border-radius: 50%;
@@ -27,19 +33,36 @@
 .navigation > div{
   width: 15px;
   height: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .navigation > div > div{
   width: 20px;
   height: 3px;
   background: #ccc;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .navigation-pane {
@@ -50,12 +73,22 @@
   top: 0;
   background: white;
   z-index: 11;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   color: #111;
   padding-top: 5vh;
-  transform: translateX(200px);
+  -webkit-transform: translateX(200px);
+      -ms-transform: translateX(200px);
+          transform: translateX(200px);
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
 
@@ -65,9 +98,15 @@
   position: fixed;
   left: 5px;
   top: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   cursor: pointer;
   z-index: 10;
   border-radius: 50%;
@@ -75,10 +114,18 @@
 .github-link > div{
   width: 15px;
   height: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-size: 1.5rem;
 }
 .linkedin-link{
@@ -87,9 +134,15 @@
   position: fixed;
   left: 5px;
   bottom: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   cursor: pointer;
     z-index: 10;
   border-radius: 50%;
@@ -97,10 +150,18 @@
 .linkedin-link > div{
   width: 15px;
   height: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-size: 1.5rem;
 }
 .instagram-link{
@@ -109,9 +170,15 @@
   position: fixed;
   right: 5px;
   bottom: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   cursor: pointer;
   z-index: 10;
   border-radius: 50%;
@@ -119,21 +186,40 @@
 .instagram-link > div{
   width: 15px;
   height: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-size: 1.5rem;
 }
 
 .show-nav{
-  transform: translateX(0px);
+  -webkit-transform: translateX(0px);
+      -ms-transform: translateX(0px);
+          transform: translateX(0px);
 }
 
 .navigation-pane > div{
-  justify-content: center;
-  flex-direction: column;
-  align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
     width: 100%;
     padding: 0 1.5rem;
@@ -155,9 +241,18 @@
 }
 .navigation-pane > div > div:last-child{
   font-size: 1rem;
-  justify-content: center;
-  flex-direction: column;
-  align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
 }
@@ -166,6 +261,8 @@
   width: 100%;
   cursor: pointer;
   text-align: right;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
   margin-top: 5px;
   margin-bottom: 5px;
@@ -195,9 +292,13 @@ body{
   background: transparent;
   z-index: 7;
   top: 0;
-  transform: translateY(0);
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
   overflow: hidden;
   will-change: scroll-position, transform;
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   -webkit-transform: translate3d(0,0,1px);
 }
@@ -219,10 +320,19 @@ body{
 }
 .panel-hd > div:nth-child(1) {
     z-index: 6;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 .panel-hd > div:nth-child(2) {
   background-color: rgba(0,0,0,0.7);
@@ -248,7 +358,8 @@ body{
   width: 104vw;
   height: 104vh;
   background-image: url('../img/IMG_1497.jpg');
-  filter: grayscale(1) contrast(120%) brightness(250%);
+  -webkit-filter: grayscale(1) contrast(120%) brightness(250%);
+          filter: grayscale(1) contrast(120%) brightness(250%);
   z-index: 2;
   background-position: center;
   background-clip: border-box;
@@ -261,7 +372,8 @@ body{
   width: 116vw;
   height: 116vh;
   background-image: url('../img/IMG_1497.jpg');
-  filter: grayscale(1) blur(12px);
+  -webkit-filter: grayscale(1) blur(12px);
+          filter: grayscale(1) blur(12px);
   background-position: center;
   background-clip: border-box;
   background-size: cover;
@@ -295,9 +407,15 @@ body{
   background: #fff;
   width: 100vw;
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
   padding: 0 20%;
   z-index: 1;
@@ -307,9 +425,15 @@ body{
   background: #fff;
   width: 100vw;
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
   z-index: 1;
   color: #111;
@@ -324,14 +448,23 @@ body{
   width: 10vw;
   z-index: 1;
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .arrow-right > img{
-  transform: rotateZ(90deg);
+  -webkit-transform: rotateZ(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotateZ(90deg);
     width: 80px;
-  filter: drop-shadow(0 0 1px black);
+  -webkit-filter: drop-shadow(0 0 1px black);
+          filter: drop-shadow(0 0 1px black);
   cursor: pointer;
 }
 .arrow-right {
@@ -343,15 +476,24 @@ body{
   width: 10vw;
   z-index: 1;
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
     cursor: pointer;
 }
 .arrow-left > img{
   width: 80px;
-  transform: rotateZ(-90deg);
-  filter: drop-shadow(0 0 1px black);
+  -webkit-transform: rotateZ(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotateZ(-90deg);
+  -webkit-filter: drop-shadow(0 0 1px black);
+          filter: drop-shadow(0 0 1px black);
     cursor: pointer;
 }
 .hide-arrow{
@@ -363,9 +505,15 @@ body{
   background: #fff;
   color: #111;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   left: 0vw;
   top: 0vw;
   height: 100vh;
@@ -374,6 +522,8 @@ body{
   z-index: 1;
   will-change: transform;
     -webkit-transform: translate3d(0,0,1px);
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
 .work-panel-white > div{
@@ -382,9 +532,15 @@ body{
   width: 100%;
   top:0;
   color: #111;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .page-indicator{
@@ -394,9 +550,14 @@ body{
   bottom: 10px !important;
   left: calc(50% - 90px) !important;
   color: #111;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   z-index: 1;
 }
 .page-indicator > div{
@@ -405,6 +566,8 @@ body{
   border: 1px solid currentColor;
   border-radius: 50%;
   cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 .page-indicator > div.active{
@@ -440,18 +603,33 @@ body{
 }
 
 .panel-white > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   color: #444;
   position:relative;
 
 }
 .panel-white > div > div.avatar{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 250px;
   width: 250px;
   border-radius: 50%;
@@ -466,16 +644,23 @@ body{
   background-position: center;
   background-size: cover;
   background-image: url('../img/Faraz_Khan_Avatar.jpg');
-  filter: brightness(100%) contrast(74%) grayscale(1);
+  -webkit-filter: brightness(100%) contrast(74%) grayscale(1);
+          filter: brightness(100%) contrast(74%) grayscale(1);
 }
 
 .panel-black {
   background: rgba(0,0,0,0.6);
   width: 100vw;
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
   padding: 0 20%;
   overflow: hidden;
@@ -484,7 +669,8 @@ body{
 .quote-panel ::before{
   z-index: -1;
   background: url(../img/back2.jpg);
-  filter: grayscale(1);
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
   background-position: center;
   background-size: cover;
   width: 110%;
@@ -498,7 +684,8 @@ body{
 .music-panel ::before{
   z-index: -1;
   background: url(../img/music.jpg);
-  filter: grayscale(1);
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
   background-position: center;
   background-size: cover;
   width: 110%;
@@ -510,10 +697,19 @@ body{
 }
 
 .panel-black > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   color: #fff;
 
 }
@@ -557,10 +753,18 @@ body{
   line-height: 3rem;
 }
 .flex{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-size: 2.6rem;
   color: #111;
   margin-top: 50px;
@@ -594,6 +798,8 @@ body{
  text-decoration: none;
  cursor: pointer;
  border-bottom: 2px solid transparent;
+ -webkit-transition: all 0.3s ease;
+ -o-transition: all 0.3s ease;
  transition: all 0.3s ease;
  text-decoration: none;
 }
@@ -648,10 +854,6 @@ body{
     font-size: 16px;
   }
 
-  .panel-white{
-    padding: 0 5%;
-      border-radius: 10px;
-  }
   .panel-white > div > div.avatar{
     height: 170px;
     width: 170px;
@@ -673,9 +875,13 @@ body{
     margin-bottom: 1rem;
   }
 
+  .panel-white{
+    padding: 0 5%;
+      border-radius: 20px;
+  }
   .panel-black{
     padding: 0 5%;
-      border-radius: 10px;
+      border-radius: 20px;
   }
   .quote{
     font-size: 1.5rem;
@@ -689,12 +895,12 @@ body{
     font-size: 1rem;
   }
   .panel-hd{
-      border-radius: 10px;
+      border-radius: 20px;
   }
   .work-white{
-      border-radius: 10px;
+      border-radius: 20px;
   }
   .work-panel-white{
-      border-radius: 10px;
+      border-radius: 20px;
   }
 }

@@ -73,9 +73,9 @@ document.querySelector('body').onkeydown =  function(e){
 
 function slideDown () {
   // console.log('Up')
-  if(MOVING_V && current_top < (5 * window.innerHeight) ) {
+  if(MOVING_V && current_top < (5 * document.documentElement.clientHeight) ) {
   MOVING_V = false
-  new_top = (parseInt(current_top) + window.innerHeight)
+  new_top = (parseInt(current_top) + document.documentElement.clientHeight)
   panelV.style.transform = 'translateY(-' + new_top + 'px)'
   current_top = new_top
 
@@ -88,7 +88,7 @@ function slideUp () {
   if(MOVING_V && current_top > 0) {
   MOVING_V = false
 
-  new_top = (parseInt(current_top) - window.innerHeight)
+  new_top = (parseInt(current_top) - document.documentElement.clientHeight)
   panelV.style.transform = 'translateY(-' + new_top + 'px)'
   current_top = new_top
 
@@ -97,9 +97,9 @@ function slideUp () {
 }
 
 function slideLeft () {
-  if(MOVING_X && current_left > 0 && current_top >= (3 * window.innerHeight) && current_top < (4 * window.innerHeight)  ) {
+  if(MOVING_X && current_left > 0 && current_top >= (3 * document.documentElement.clientHeight) && current_top < (4 * document.documentElement.clientHeight)  ) {
   MOVING_X = false
-  new_left = (parseInt(current_left) - window.innerWidth)
+  new_left = (parseInt(current_left) - document.documentElement.clientWidth)
   panel.style.transform = 'translateX(-' + new_left + 'px)'
   current_left = new_left
   document.getElementsByClassName('active')[0].previousSibling.classList.add('active')
@@ -109,11 +109,11 @@ function slideLeft () {
 }
 
 function slideRight() {
-  console.log(current_top/window.innerHeight)
-  if(MOVING_X && current_left < (7 * window.innerWidth) && current_top >= (3 * window.innerHeight) && current_top < (4 * window.innerHeight) ) {
+  console.log(current_top/document.documentElement.clientHeight)
+  if(MOVING_X && current_left < (7 * document.documentElement.clientWidth) && current_top >= (3 * document.documentElement.clientHeight) && current_top < (4 * document.documentElement.clientHeight) ) {
   MOVING_X = false
   console.log('Right')
-  new_left = (parseInt(current_left) + window.innerWidth)
+  new_left = (parseInt(current_left) + document.documentElement.clientWidth)
   panel.style.transform = 'translateX(-' + new_left + 'px)'
   current_left = new_left
   document.querySelectorAll('.active')[0].nextSibling.classList.add('active')
@@ -129,9 +129,9 @@ function slideRight() {
       startY,
       distX,
       distY,
-      threshold = 150, //required min distance traveled to be considered swipe
+      threshold = 50, //required min distance traveled to be considered swipe
       restraint = 100, // maximum distance allowed at the same time in perpendicular direction
-      allowedTime = 300, // maximum time allowed to travel that distance
+      allowedTime = 500, // maximum time allowed to travel that distance
       elapsedTime,
       startTime,
       handleswipe = callback || function(swipedir){}
