@@ -6,6 +6,8 @@ document.getElementsByClassName('close-nav')[0].onclick = function () {
   document.getElementsByClassName('navigation-pane')[0].classList.remove('show-nav')
 }
 
+
+
 var panel = document.getElementsByClassName('work-panel-white')[0]
 
 var panelV = document.getElementsByClassName('vertical-panel')[0]

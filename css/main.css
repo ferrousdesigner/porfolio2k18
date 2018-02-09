@@ -10,6 +10,9 @@
           box-sizing: border-box;
 }
 
+html{
+}
+
 .navigation{
   width: 60px;
   height: 60px;
@@ -66,7 +69,7 @@
 }
 
 .navigation-pane {
-  height: 100vh;
+  height: var(--view-height);
   width: 200px;
   position: fixed;
   right: 0;
@@ -272,7 +275,7 @@
 }
 
 body{
-  height: 100vh;
+  height: var(--view-height);
   background: #111;
   overflow: hidden;
   width: 100vw;
@@ -296,7 +299,6 @@ body{
       -ms-transform: translateY(0);
           transform: translateY(0);
   overflow: hidden;
-  will-change: scroll-position, transform;
   -webkit-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
@@ -304,7 +306,7 @@ body{
 }
 .panel-hd{
   width: 100vw;
-  height: 100vh;
+  height: var(--view-height);
   position: relative;
   background: transparent;
   z-index: 7;
@@ -345,16 +347,15 @@ body{
 
 .panel-hd > div:nth-child(4) {
   left: calc(50% - 100px);
-  top: calc(50% - 50vh);
+  top: calc(50% - 54vh);
   width: 200px;
-  height: 100vh;
+  height: var(--view-height);
   overflow: hidden;
   z-index: 3;
 }
 .panel-hd > div:nth-child(4) > div {
   position: absolute;
   left: calc(-52vw + 100px);
-  bottom: calc(-52vh + 50vh);
   width: 104vw;
   height: 104vh;
   background-image: url('../img/IMG_1497.jpg');
@@ -406,7 +407,7 @@ body{
 .panel-white {
   background: #fff;
   width: 100vw;
-  height: 100vh;
+  height: var(--view-height);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -424,7 +425,7 @@ body{
 .work-white{
   background: #fff;
   width: 100vw;
-  height: 100vh;
+  height: var(--view-height);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -516,11 +517,10 @@ body{
           align-items: center;
   left: 0vw;
   top: 0vw;
-  height: 100vh;
+  height: var(--view-height);
   width: 100vw;
   overflow-x: visible;
   z-index: 1;
-  will-change: transform;
     -webkit-transform: translate3d(0,0,1px);
   -webkit-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
@@ -651,7 +651,7 @@ body{
 .panel-black {
   background: rgba(0,0,0,0.6);
   width: 100vw;
-  height: 100vh;
+  height: var(--view-height);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -676,7 +676,6 @@ body{
   width: 110%;
   height: 110%;
   position: absolute;
-  will-change: transform;
   left: -5%;
   top: -5%;
   content: '';
