@@ -72,6 +72,7 @@ html{
   height: var(--view-height);
   width: 200px;
   position: fixed;
+  border-left: 1px solid #dddddd;
   right: 0;
   top: 0;
   background: white;
@@ -347,7 +348,7 @@ body{
 
 .panel-hd > div:nth-child(4) {
   left: calc(50% - 100px);
-  top: calc(50% - 54vh);
+  top: calc(50% - calc(var(--view-height)/2));
   width: 200px;
   height: var(--view-height);
   overflow: hidden;
@@ -357,7 +358,8 @@ body{
   position: absolute;
   left: calc(-52vw + 100px);
   width: 104vw;
-  height: 104vh;
+  height: 110vh;
+  top: -5vh;
   background-image: url('../img/IMG_1497.jpg');
   -webkit-filter: grayscale(1) contrast(120%) brightness(250%);
           filter: grayscale(1) contrast(120%) brightness(250%);
@@ -396,7 +398,7 @@ body{
   line-height: 64px;
   text-align: center;
   text-transform: uppercase;
-  margin-top: -4rem;
+  margin-top: -8rem;
   color: #ccc;
 }
 .profession{
@@ -458,14 +460,16 @@ body{
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+    transition: all 0.3s ease-in-out;
 }
 .arrow-right > img{
   -webkit-transform: rotateZ(90deg);
       -ms-transform: rotate(90deg);
           transform: rotateZ(90deg);
     width: 80px;
-  -webkit-filter: drop-shadow(0 0 1px black);
-          filter: drop-shadow(0 0 1px black);
+    margin-top: -4rem;
+  -webkit-filter: drop-shadow(0 0 1px rgba(0,0,0,0.3));
+          filter: drop-shadow(0 0 1px rgba(0,0,0,0.3));
   cursor: pointer;
 }
 .arrow-right {
@@ -487,14 +491,16 @@ body{
       -ms-flex-align: center;
           align-items: center;
     cursor: pointer;
+      transition: all 0.3s ease-in-out;
 }
 .arrow-left > img{
   width: 80px;
+  margin-top: -4rem;
   -webkit-transform: rotateZ(-90deg);
       -ms-transform: rotate(-90deg);
           transform: rotateZ(-90deg);
-  -webkit-filter: drop-shadow(0 0 1px black);
-          filter: drop-shadow(0 0 1px black);
+  -webkit-filter: drop-shadow(0 0 1px rgba(0,0,0,0.3));
+          filter: drop-shadow(0 0 1px rgba(0,0,0,0.3));
     cursor: pointer;
 }
 .hide-arrow{
@@ -545,9 +551,9 @@ body{
 
 .page-indicator{
   position: absolute;
-  height: 40px !important;
-  width: 180px !important;
-  bottom: 10px !important;
+  height: 40px;
+  width: 180px;
+  bottom: 75px;
   left: calc(50% - 90px) !important;
   color: #111;
   display: -webkit-box;
@@ -636,6 +642,7 @@ body{
   border:  1px solid #eee;
   padding: 25px;
   margin-bottom: 2rem;
+  margin-top: -4rem;
 }
 .panel-white > div > div.avatar > div{
   width: 200px;
@@ -724,7 +731,7 @@ body{
   line-height: 64px;
   text-align: center;
   text-transform: uppercase;
-  margin-top: -4rem;
+  margin-top: -8rem;
   color: #111;
 }
 .white-heading{
@@ -738,7 +745,7 @@ body{
   line-height: 64px;
   text-align: center;
   text-transform: uppercase;
-  margin-top: -4rem;
+  margin-top: -8rem;
   color: #fff;
 }
 
@@ -750,6 +757,7 @@ body{
 .quote{
   font-size: 2.5rem;
   line-height: 3rem;
+  margin-top: -6rem;
 }
 .flex{
   display: -webkit-box;
@@ -839,19 +847,27 @@ body{
 
 @media (max-width: 640px) {
   .name{
-    font-size: 2rem;
-    letter-spacing: 0.3rem;
+    font-size: 1.7rem;
+    letter-spacing: 0.2rem;
     line-height: 20px;
   }
   .black-heading, .white-heading{
-    font-size: 2rem;
-    letter-spacing: 0.3rem;
-    line-height: 36px;
+    font-size: 1.7rem;
+    letter-spacing: 0.2rem;
+    line-height: 20px;
+  }
+  .flex{
+    margin-top: 40px;
+  }
+  .profession{
+    font-size: 14px;
   }
 
-  .profession{
-    font-size: 16px;
+  .github-link, .linkedin-link, .instagram-link, .navigation{
+    width: 30px;
+    height: 30px;
   }
+
 
   .panel-white > div > div.avatar{
     height: 170px;
@@ -864,13 +880,13 @@ body{
     border-radius: 50%;
   }
   .tagline{
-    font-size: 2rem;
+    font-size: 1.6rem;
     margin-bottom: 1rem;
   }
   .about,.music-bio{
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
-    line-height: 26px;
+    line-height: 21px;
     margin-bottom: 1rem;
   }
 

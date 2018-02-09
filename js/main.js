@@ -48,7 +48,6 @@ var mousewheelevt=(/Firefox/i.test(navigator.userAgent))? "DOMMouseScroll" : "mo
 
 if (document.attachEvent) //if IE (and Opera depending on user setting)
     document.querySelector('body').attachEvent("on"+mousewheelevt, function(e){
-      console.log('event',e)
       scrollDetectFunction(e)
     })
 else if (document.addEventListener) //WC3 browsers
@@ -57,7 +56,6 @@ else if (document.addEventListener) //WC3 browsers
     }, false)
 
     function scrollDetectFunction(e){
-     // console.log(document.getElementsByClassName('work-white'))
      if((/Firefox/i.test(navigator.userAgent)))
      {
        var delta = e.detail;
@@ -69,7 +67,6 @@ else if (document.addEventListener) //WC3 browsers
            slideDown()
        }
        else {
-         console.log('Wait')
        }
      } else {
        var delta = e.wheelDelta;
@@ -81,7 +78,6 @@ else if (document.addEventListener) //WC3 browsers
            slideDown()
        }
        else {
-         console.log('Wait')
        }
      }
     }
@@ -102,19 +98,17 @@ document.querySelector('body').onkeydown =  function(e){
 }
 
 function slideDown () {
-  // console.log('Up')
   if(MOVING_V && current_top < (5 * window.screen.availHeight) ) {
   MOVING_V = false
   new_top = (parseInt(current_top) + window.screen.availHeight)
   panelV.style.transform = 'translateY(-' + new_top + 'px)'
   current_top = new_top
 
-  setTimeout(function () { MOVING_V = true}, 1500)
+  setTimeout(function () { MOVING_V = true}, 1000)
   }
 }
 
 function slideUp () {
-  // console.log('Down')
   if(MOVING_V && current_top > 0) {
   MOVING_V = false
 
@@ -122,7 +116,7 @@ function slideUp () {
   panelV.style.transform = 'translateY(-' + new_top + 'px)'
   current_top = new_top
 
-  setTimeout(function () { MOVING_V = true}, 1500)
+  setTimeout(function () { MOVING_V = true}, 1000)
   }
 }
 
@@ -134,21 +128,22 @@ function slideLeft () {
   current_left = new_left
   document.getElementsByClassName('active')[0].previousSibling.classList.add('active')
   document.getElementsByClassName('active')[1].classList.remove('active')
-  setTimeout(function () { MOVING_X = true}, 1500)
+  checkArrow()
+  setTimeout(function () { MOVING_X = true}, 1000)
   }
 }
 
 function slideRight() {
-  console.log(current_top/window.screen.availHeight)
   if(MOVING_X && current_left < (7 * window.screen.availWidth) && current_top >= (3 * window.screen.availHeight) && current_top < (4 * window.screen.availHeight) ) {
   MOVING_X = false
-  console.log('Right')
   new_left = (parseInt(current_left) + window.screen.availWidth)
   panel.style.transform = 'translateX(-' + new_left + 'px)'
   current_left = new_left
   document.querySelectorAll('.active')[0].nextSibling.classList.add('active')
   document.querySelectorAll('.active')[0].classList.remove('active')
-  setTimeout(function () { MOVING_X = true}, 1500)
+  checkArrow()
+
+  setTimeout(function () { MOVING_X = true}, 1000)
   }
 }
 
@@ -203,4 +198,43 @@ document.querySelector('.arrow-left > img').onclick = () => {
 }
 document.querySelector('.arrow-right > img').onclick = () => {
     slideLeft()
+}
+
+console.log(document.getElementsByClassName('page-indicator')[0].childNodes)
+
+let indicators = document.getElementsByClassName('page-indicator')[0].childNodes
+
+for(let i = 0; i < indicators.length; i++)
+{
+  indicators[i].onclick = indicatorAction
+  indicators[i].setAttribute('data-index', i + 1)
+}
+
+function indicatorAction(e) {
+  let offset = e.target.getAttribute('data-index')
+  console.log('pehle', current_left)
+  document.getElementsByClassName('active')[0].classList.remove('active')
+  e.target.classList.add('active')
+  current_left = (parseInt(offset) - 1) * parseInt(window.screen.availWidth);
+  console.log('ab',current_left)
+  panel.style.transform = 'translateX(-' + current_left + 'px)'
+  checkArrow()
+
+}
+
+function checkArrow () {
+  if(current_left > 0){
+    document.getElementsByClassName('arrow-right')[0].classList.remove('hide-arrow')
+  }
+  if(current_left == (7 * window.screen.availWidth))
+  {
+    document.getElementsByClassName('arrow-left')[0].classList.add('hide-arrow')
+  }
+  if(current_left == 0){
+    document.getElementsByClassName('arrow-right')[0].classList.add('hide-arrow')
+  }
+  if(current_left < (7 * window.screen.availWidth))
+  {
+    document.getElementsByClassName('arrow-left')[0].classList.remove('hide-arrow')
+  }
 }
