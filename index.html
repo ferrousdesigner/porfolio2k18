@@ -11,7 +11,7 @@
         <meta property="og:image" content="" />
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#000000" />
         <!-- <link rel="apple-touch-icon" href="./img/favicon.png">
         <link rel="shortcut icon" href="./img/favicon.png" /> -->
         <!-- Place favicon.ico in the root directory -->
@@ -24,20 +24,30 @@
 
     </head>
     <body>
-      <div class="github-link">
+      <div onclick="goTo('github')" class="github-link">
         <div>
           <i class="fa fa-github"></i>
         </div>
+        <div class="gh-tip">
+          Have a look at my not so glorious repositories on GitHub
+        </div>
       </div>
-      <div class="linkedin-link">
+      <div onclick="goTo('linkedin')" class="linkedin-link">
         <div>
           <i class="fa fa-linkedin"></i>
         </div>
+        <div class="l-tip">
+          Connect with me via LinkedIn
+        </div>
       </div>
-      <div class="instagram-link">
+      <div onclick="goTo('instagram')" class="instagram-link">
         <div>
           <i class="fa fa-instagram"></i>
         </div>
+        <div class="i-tip">
+          Follow me on Instagram if you like music.
+        </div>
+      </div>
       </div>
       <nav class="navigation">
         <div>
@@ -53,12 +63,14 @@
       <div class="navigation-pane">
         <div>
           <div class="close-nav">X</div>
-          <h2>Roam Around.</h2>
+          <h2>Head To</h2>
           <div>
-            <a>Home</a>
-            <a>About</a>
-            <a>Work</a>
-            <a>Projects</a>
+            <a onclick="moveTo('home')">Home</a>
+            <a onclick="moveTo('about')">About</a>
+            <a onclick="moveTo('theory')">Theory</a>
+            <a onclick="moveTo('work')">Work</a>
+            <a onclick="moveTo('hobbie')">Hobbie</a>
+            <a onclick="moveTo('contact')">Connect</a>
           </div>
         </div>
       </div>
@@ -100,25 +112,31 @@
               <p class="black-heading">SELECTED WORK</p>
             </div>
             <div>
-              <p class="black-heading">TWO</p>
+              <div class="project-img"><img src='./img/quizzag.png' alt='quizzag'/></div>
+              <a href='http://www.thefarazkhan.in/quizzag.php' class="project-link">View Online</a>
             </div>
             <div>
-              <p class="black-heading">THREE</p>
+              <div class="project-img"><img src='./img/easyinvoice.png' alt='easyinvoice'/></div>
+              <a href='http://thefarazkhan.in/invoicesystem.php' class="project-link">View Online</a>
             </div>
             <div>
-              <p class="black-heading">FOUR</p>
+              <div class="project-img"><img src='./img/kroble.png' alt='kroble'/></div>
+              <a href='http://thefarazkhan.in/kroble2.html' class="project-link">View Online</a>
             </div>
             <div>
-              <p class="black-heading">FIVE</p>
+              <div class="project-img"><img src='./img/p1.png' alt='portfoliov1'/></div>
+              <a href='http://thefarazkhan.in/portfolio.html' class="project-link">View Online</a>
             </div>
             <div>
-              <p class="black-heading">SIX</p>
+              <div class="project-img"><img src='./img/p2.png' alt='portfoliov2'/></div>
+              <a href='http://thefarazkhan.in/portfoliov2.html' class="project-link">View Online</a>
             </div>
             <div>
-              <p class="black-heading">SEVEN</p>
+              <div class="project-img"><img src='./img/p3.png' alt='portfoliov3'/></div>
+              <a href='#' class="project-link">View Online</a>
             </div>
             <div>
-              <p class="black-heading">EIGHT</p>
+              <p class="black-heading">Soon..</p>
             </div>
           </div>
           <div class="page-indicator"><div class="active">
@@ -140,18 +158,18 @@
         <div class="panel-black music-panel">
           <div>
             <p class="white-heading">MUSIC</p>
-            <p class="music-bio">My interest in music developed from a very young age, but it was 2011 until I got serious and started my journey of discovering music, as I learnt how play a guitar and piano, I began to realise that there much more I could do. That when I got into music programming. </p>
-            <div><a class="links-underlined">Youtube</a><a class="links-underlined">Instagram</a></div>
+            <p class="music-bio">My interest in music developed from a very young age, but it was 2011 until I got serious and started my journey of discovering music, as I learnt how play a guitar and piano, I began to realise that there much more I could do. That when I got into music programming. Subscribe to my Youtube channel and follow me on instagram to get notified about my upcoming content. </p>
+            <div><a onclick="goTo('youtube')" class="links-underlined">Youtube</a><a onclick="goTo('instagram')" class="links-underlined">Instagram</a></div>
           </div>
         </div>
         <div class="panel-white">
           <div>
-            <p class="black-heading">SAY SOMETHING!</p>
-            <div class="flex"> <div><i class="fa fa-github"></i>
-              <i class="fa fa-instagram"></i></div>
+            <p class="black-heading">SAY HEY!</p>
+            <div class="flex"> <div><i  onclick="goTo('github')" class="fa fa-github"></i>
+              <i onclick="goTo('instagram')" class="fa fa-instagram"></i></div>
               <div>
-              <i class="fa fa-linkedin"></i>
-              <i class="fa fa-youtube"></i>
+              <i onclick="goTo('linkedin')" class="fa fa-linkedin"></i>
+              <i onclick="goTo('youtube')" class="fa fa-youtube"></i>
               </div>
             </div>
               <a class="underlined">Or download my resume</a>
