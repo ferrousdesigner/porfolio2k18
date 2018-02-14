@@ -6,6 +6,13 @@ document.getElementsByClassName('close-nav')[0].onclick = function () {
   document.getElementsByClassName('navigation-pane')[0].classList.remove('show-nav')
 }
 
+window.onload = function () {
+  setTimeout(function () {
+    document.querySelector('.loader').classList.add('loader-hide')
+  }, 2000)
+
+}
+
 
 
 var panel = document.getElementsByClassName('work-panel-white')[0]
@@ -104,7 +111,7 @@ function slideDown () {
   new_top = (parseInt(current_top) + window.screen.availHeight)
   panelV.style.transform = 'translateY(-' + new_top + 'px)'
   current_top = new_top
-
+  checkArrow()
   setTimeout(function () { MOVING_V = true}, timeout)
   }
 }
@@ -116,7 +123,7 @@ function slideUp () {
   new_top = (parseInt(current_top) - window.screen.availHeight)
   panelV.style.transform = 'translateY(-' + new_top + 'px)'
   current_top = new_top
-
+  checkArrow()
   setTimeout(function () { MOVING_V = true}, timeout)
   }
 }
@@ -256,7 +263,7 @@ function moveTo(dest) {
 
 }
 function goTo(dest) {
-
+  console.log('dest')
   if(dest == 'github'){
     window.open('https://github.com/ferrousdesigner', '_blank');
   } else if(dest == 'linkedin'){
@@ -268,6 +275,7 @@ function goTo(dest) {
       window.open('https://www.instagram.com/the_band_of_one/', '_blank');
   }
 }
+
 
 function checkArrow () {
   if(current_left > 0){
@@ -283,5 +291,27 @@ function checkArrow () {
   if(current_left < (7 * window.innerWidth))
   {
     document.getElementsByClassName('arrow-left')[0].classList.remove('hide-arrow')
+  }
+  if(current_top < (5 * window.screen.availHeight) && current_top >= ( 4 * window.screen.availHeight) )
+  {
+    document.querySelector('.fixed-links').classList.add('show-links')
+  }
+  else {
+    document.querySelector('.fixed-links').classList.remove('show-links')
+  }
+  if(current_top < (6 * window.screen.availHeight) && current_top >= ( 5 * window.screen.availHeight) )
+  {
+    document.querySelector('.flex').classList.add('show-flex')
+  }
+  else {
+    document.querySelector('.flex').classList.remove('show-flex')
+  }
+
+  if(current_top < (2 * window.screen.availHeight) && current_top >= ( 1 * window.screen.availHeight) )
+  {
+    document.querySelector('.about').classList.add('about-show')
+  }
+  else {
+    document.querySelector('.about').classList.remove('about-show')
   }
 }
