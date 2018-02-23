@@ -54,11 +54,11 @@ swipedetect(el, function(swipedir){
 
 var mousewheelevt=(/Firefox/i.test(navigator.userAgent))? "DOMMouseScroll" : "mousewheel" //FF doesn't recognize mousewheel as of FF3.x
 
-if (document.attachEvent) //if IE (and Opera depending on user setting)
+if (document.attachEvent)
     document.querySelector('body').attachEvent("on"+mousewheelevt, function(e){
       scrollDetectFunction(e)
     })
-else if (document.addEventListener) //WC3 browsers
+else if (document.addEventListener)
     document.querySelector('body').addEventListener(mousewheelevt, function(e){
       scrollDetectFunction(e)
     }, false)
